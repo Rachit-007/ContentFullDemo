@@ -3,12 +3,14 @@ import FooterBottom from "./footerBottom/footerBottom";
 import FooterMiddle from "./footerMiddle/footerMiddle";
 import FooterTop from "./footerTop/footerTop";
 import _ from "lodash";
+import NewsLetter from "./newsletter/newsLetter";
 
 export const Footer = () => {
   const { footerData, footerLoading, footerError } = useFooter();
 
   return (
     <>
+      <NewsLetter />
       {_.size(footerData) > 0 ? (
         <>
           <div className="bg-black">
@@ -21,7 +23,7 @@ export const Footer = () => {
               />
             </div>
           </div>
-          <div className="max-w-7xl mx-auto w-full">
+          <div>
             <FooterBottom
               data={footerData.footerCollection.items[0].footerBottom}
             />

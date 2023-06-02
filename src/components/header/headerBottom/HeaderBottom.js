@@ -28,8 +28,8 @@ const HeaderBottom = () => {
   return (
     <div>
       {_.size(headerDetails) > 0 ? (
-        <div className=" bg-black  text-white text-md ">
-          <ul className="flex justify-center  max-w-screen-lg m-auto font-semibold relative ">
+        <div className="bg-black  text-white text-md">
+          <ul className="flex justify-center  flex-wrap xl:max-w-screen-lg  md:max-w-screen-md sm:max-w-screen-sm m-auto font-semibold relative  ">
             {headerDetails.header.headeItemsCollection.items.map(
               (item, index) => (
                 <HeaderBottomList items={item} key={index} />

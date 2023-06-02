@@ -20,9 +20,9 @@ const MainBanner = () => {
       >
         {_.size(bannerData) > 0 ? (
           bannerData.mainBannersCollection.items[0].bannerCollection.items.map(
-            (image) => (
-              <SwiperSlide>
-                <img src={image.url} />
+            (image, index) => (
+              <SwiperSlide key={index}>
+                <img src={image.url} key={index} />
               </SwiperSlide>
             )
           )

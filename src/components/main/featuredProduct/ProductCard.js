@@ -8,11 +8,11 @@ const ProductCard = ({ product }) => {
   return (
     <>
       <div
-        className="flex flex-col mx-3 justify-between h-full group hover:cursor-pointer"
+        className="flex flex-col mx-3 justify-between group hover:cursor-pointer"
         onMouseOver={() => setShowBag(true)}
         onMouseOut={() => setShowBag(false)}
       >
-        <div className="rounded-full p-2 bg-gray-200 w-9 absolute right-5 top-2  cursor-pointer">
+        <div className="rounded-full p-2 bg-gray-200 w-9 absolute right-5 top-2  cursor-pointer ">
           <svg
             width="20px"
             className="hover:fill-black"
@@ -24,9 +24,9 @@ const ProductCard = ({ product }) => {
             <path
               d="M12 20C12 20 21 16 21 9.71405C21 6 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12.7198 5.92016C12.3266 6.32798 11.6734 6.32798 11.2802 5.92016L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5 4 3 6 3 9.71405C3 16 12 20 12 20Z"
               stroke="#000"
-              stroke-width="1.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.2"
+              storkelinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -50,7 +50,7 @@ const ProductCard = ({ product }) => {
         )}
         <img
           src={product.imageCollection.items[0].url}
-          className="w-55 h-71 border px-5 group-hover:bg-opacity-95  group-hover:bg-gray-200 transition-all duration-500"
+          className="max-w-55 max-h-71 border px-5 group-hover:bg-opacity-95  group-hover:bg-gray-200 transition-all duration-500"
         />
         <h1 className="text-sm font-normal flex-1 text-gray-800 font-sans pt-2">
           {product.title}

@@ -4,14 +4,12 @@ import { Link } from "react-router-dom";
 const HeaderBottomList = ({ items }) => {
   const [showDetails, setShowDetails] = useState(false);
 
-  console.log(items);
   return (
-    <>
-      <li
-        className="flex p-3.5 px-8 border-b-4 border-transparent ease-out transition-all hover:border-red-700"
-        onMouseOver={() => setShowDetails(true)}
-        onMouseOut={() => setShowDetails(false)}
-      >
+    <div
+      onMouseOver={() => setShowDetails(true)}
+      onMouseOut={() => setShowDetails(false)}
+    >
+      <li className="flex p-3.5 px-8 border-b-4 border-transparent ease-out transition-all hover:border-red-700">
         <Link to={items.link}>
           <span className="cursor-pointer">{items.title}</span>
         </Link>
@@ -32,28 +30,28 @@ const HeaderBottomList = ({ items }) => {
 	s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
           />
         </svg>
-        {showDetails == true ? (
-          <div className="absolute top-14 w-full left-0 bg-white z-10  text-black shadow-xl pb-3 flex gap-20 px-10 m-auto ">
-            {items.subCategoryCollection.items.map((item) => {
-              return (
-                <div>
-                  <Link to={`${items.link}-${item.link}`}>
-                    <p className="font-semibold text-lg pt-4">{item.title}</p>
-                  </Link>
-                  {item.subCategoryCollection.items.map((subItems) => (
-                    <Link to={`${items.link}-${item.link}-${subItems.link}`}>
-                      <p className="font-light pt-1">{subItems.title}</p>
-                    </Link>
-                  ))}
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          <></>
-        )}
       </li>
-    </>
+      {showDetails == true ? (
+        <div className="absolute  w-full left-0 bg-white z-10  text-black shadow-xl pb-3 flex flex-wrap gap-20 px-10 m-auto ">
+          {items.subCategoryCollection.items.map((item) => {
+            return (
+              <div>
+                <Link to={`${items.link}-${item.link}`}>
+                  <p className="font-semibold text-lg pt-4">{item.title}</p>
+                </Link>
+                {item.subCategoryCollection.items.map((subItems) => (
+                  <Link to={`${items.link}-${item.link}-${subItems.link}`}>
+                    <p className="font-light pt-1">{subItems.title}</p>
+                  </Link>
+                ))}
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <></>
+      )}
+    </div>
   );
 };
 
